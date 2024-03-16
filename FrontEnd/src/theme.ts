@@ -1,21 +1,23 @@
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
-import { cyan, deepOrange, orange, teal } from '@mui/material/colors'
 
+const AUTH_FORM_MAX_WIDTH = '350px'
+
+declare module '@mui/material/styles' {
+  interface Theme {
+    app: {
+      authFormMaxWidth: string
+    }
+  }
+  interface ThemeOptions {
+    app?: {
+      authFormMaxWidth: string
+    }
+  }
+}
 // A custom theme for this app
 const theme = extendTheme({
-  colorSchemes: {
-    light: {
-      palette: {
-        primary: teal,
-        secondary: deepOrange
-      }
-    },
-    dark: {
-      palette: {
-        primary: cyan,
-        secondary: orange
-      }
-    }
+  app: {
+    authFormMaxWidth: AUTH_FORM_MAX_WIDTH
   }
 })
 
