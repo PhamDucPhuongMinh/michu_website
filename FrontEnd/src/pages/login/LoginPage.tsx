@@ -11,6 +11,7 @@ import AuthFormContainer from '@/components/AuthFormContainer'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+import Link from '@/components/Link'
 
 function LoginPage() {
   const [showPassword, setShowPassword] = useState<boolean>(false)
@@ -56,10 +57,10 @@ function LoginPage() {
           }
         />
       </FormControl>
-      <Box sx={{ mb: 2 }}>
-        <Typography variant="subtitle2" color="primary.main" align="right">
+      <Box sx={{ mb: 2, textAlign: 'right' }}>
+        <Link href="/forgot-password" variant="subtitle2" sx={{ textDecoration: 'none', color: 'primary.main' }}>
           Forgot Password?
-        </Typography>
+        </Link>
       </Box>
       <FormControl size="small" fullWidth sx={{ mb: 2 }}>
         <Button variant="contained" color="primary">
@@ -68,9 +69,9 @@ function LoginPage() {
       </FormControl>
       <Typography variant="body2" align="center">
         Don't have an account?&nbsp;
-        <Typography color="primary.main" variant="subtitle2" display="inline-block">
+        <Link href="/signup" sx={{ color: 'primary.main', fontWeight: 500, textDecoration: 'none' }}>
           Sign Up.
-        </Typography>
+        </Link>
       </Typography>
     </AuthFormContainer>
   )

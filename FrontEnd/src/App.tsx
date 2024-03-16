@@ -1,11 +1,9 @@
-import SignUpPage from '@/pages/signUp/SignUpPage'
-import LoginPage from './pages/login/LoginPage'
+import RoutesApp from '@/routes'
 
 function App() {
   return (
     <>
-      <SignUpPage />
-      {/* <LoginPage /> */}
+      <RoutesApp />
     </>
   )
 }
