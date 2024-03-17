@@ -140,7 +140,6 @@ function ForgotPasswordPage() {
                     }
               }}
               color="primary"
-              component="button"
               onClick={() => handleSubmitEmail({ email: emailSendCode })}
             >
               <Typography component="span" variant="body2">
