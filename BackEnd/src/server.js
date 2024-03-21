@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import express from 'express'
-import { CONNECT_DB, GET_DB } from './config/mongodb'
+import { CONNECT_DB, GET_DB, CLOSE_DB } from './config/mongodb'
+import exitHook from 'async-exit-hook'
 
 const START_SERVER = () => {
   const app = express()
@@ -13,6 +14,11 @@ const START_SERVER = () => {
 
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
+  })
+
+  exitHook(() => {
+    console.log('Disconnected to Mongodb Cloud Atlas!')
+    CLOSE_DB()
   })
 }
 
